@@ -1,0 +1,17 @@
+{%extends 'surgeons/base.html'%}
+
+{% block content %}
+<h1>Запланированные операции</h1>
+
+<ul>
+    {%for n in opersched%}
+    <li>
+        <a href="{{ n.get_absolute_url }}"><h2>{{n.operationdate}}</h2></a>
+        <hr>
+    </li>
+    {%endfor%}
+
+   
+       
+</ul>
+{% endblock %}

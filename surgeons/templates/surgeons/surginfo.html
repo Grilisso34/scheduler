@@ -1,0 +1,57 @@
+{%extends 'surgeons/base.html'%}
+
+{%block content%}
+<!-- <h1>{{name}}</h1> -->
+
+{%for n in name%}
+<h2>{{n.title}}</h2>
+{%endfor%}
+<ul>
+    {%for n in surginfo%}
+    <li>
+        <p>Начало рабочего дня: <i>{{n.start}}</i></p>
+        <p>Приемые часы до обеда: <i>{{n.beforedinner}}</i></p>
+        <p>Обеденный перерыв: <i>{{n.dinner}}</i></p>
+        <p>Приемные часы после обеда: <i>{{n.afterdinner}}</i></p>
+        <p>Оканчание рабочего дня: <i>{{n.end}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+
+    <h2>Приемные дни</h2>
+    {%for n in receptdays%}
+    <li>
+        <p>Понедельник: <i>{{n.monday}}</i></p>
+        <p>Вторник: <i>{{n.tuesday}}</i></p>
+        <p>Среда: <i>{{n.wensday}}</i></p>
+        <p>Четверг: <i>{{n.thursday}}</i></p>
+        <p>Пятница: <i>{{n.friday}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+
+    <h2>Плановые выезды к гражданам, находящимся на амбулаторном лечении</h2>
+    {%for n in departures%}
+    <li>
+        <p>Понедельник: <i>{{n.monday}}</i></p>
+        <p>Вторник: <i>{{n.tuesday}}</i></p>
+        <p>Среда: <i>{{n.wensday}}</i></p>
+        <p>Четверг: <i>{{n.thursday}}</i></p>
+        <p>Пятница: <i>{{n.friday}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+
+    <h2>График дежурств</h2>
+    {%for n in duty%}
+    <li>
+        <p>Понедельник: <i>{{n.month}}</i></p>
+        <p>Вторник: <i>{{n.day}}</i></p>
+        <p>Среда: <i>{{n.dutytype}}</i></p>
+        <p>Четверг: <i>{{n.dutytime}}</i></p>
+        <p>Пятница: <i>{{n.dayornight}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+</ul>
+{%endblock%}

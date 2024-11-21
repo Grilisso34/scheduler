@@ -1,0 +1,14 @@
+{%extends 'surgeons/base.html'%}
+
+{% block content%}
+<ul>
+    {%for n in names%}
+    <li>
+        <a href="{{ n.get_absolute_url }}"><h2>{{n.title}}</h2></a>
+        <p>{{n.birdhday|date:"d-m-Y"}}</p>
+        <hr>
+    </li>
+    {%endfor%}
+</ul>
+
+{% endblock %}

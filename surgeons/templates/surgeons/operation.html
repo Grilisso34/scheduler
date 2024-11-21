@@ -1,0 +1,30 @@
+{%extends 'surgeons/base.html'%}
+
+{% block content %}
+
+<ul>
+    {%for n in operation%}
+    <h1>Оперирующий хирург</h1>
+    <li>
+        <h2>{{n.surg}}</h2>
+        <hr>
+    </li>
+    {%endfor%}
+    {%for n in opersched%}
+    <li>
+        <p>Дата операции <i>{{n.operationdate}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+    {%for n in patinfo%}
+    <li>
+       <p>Пациент: <i>{{n.patientname}}</i></p>
+       <p>Диаоноз: <i>{{n.diagnosis}}</i></p>
+       <p>Хронические заболевания: <i>{{n.chrronicdeseases}}</i></p>
+       <p>Перенесенные операции: <i>{{n.transferredoperations}}</i></p>
+       <p>Медицинские противопоказания: <i>{{n.medicalcontraindications}}</i></p>
+        <hr>
+    </li>
+    {%endfor%}
+</ul>
+{% endblock %}

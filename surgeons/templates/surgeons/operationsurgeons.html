@@ -1,0 +1,26 @@
+{%extends 'surgeons/base.html'%}
+
+{% block content%}
+<ul>
+    {%for n in surgeons%}
+    <li>
+        <a href="{{ n.get_absolute_url }}"><h2>{{n.surg}}</h2></a>
+        <hr>
+    </li>
+    {%endfor%}
+
+    <!-- {%for n in opersched%}
+    <li>
+        <h2>{{n.oper}}</h2>
+        <hr>
+    </li>
+    {%endfor%}
+    {%for n in patinfo%}
+    <li>
+       <h2>{{n.oper}}</h2>
+        <hr>
+    </li>
+    {%endfor%} -->
+</ul>
+
+{% endblock %}
